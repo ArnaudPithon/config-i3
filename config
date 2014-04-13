@@ -14,9 +14,9 @@ font -*-ohsnapu-medium-r-normal-*-12-*-*-*-*-*-*-*
 
 # Couleurs {{{2
 # class                 border  backgr. text    indicator
-client.focused          #FFAA00 #CF4913 #ffffff #FFEB55
-client.focused_inactive #333333 #5f676a #ffffff #484e50
-client.unfocused        #444444 #222222 #CCC2C2 #292d2e
+client.focused          #ABCD67 #63772D #ffffff #EFEFDA
+client.focused_inactive #CF4913 #39312C #ffffff #FFEB55
+client.unfocused        #64564D #39312C #949494 #9A8477
 client.urgent           #2f343a #900000 #ffffff #900000
 # }}}
 # }}}
