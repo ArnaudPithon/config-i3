@@ -1,0 +1,222 @@
+# i3 config file (v4)
+#
+# Please see http://i3wm.org/docs/userguide.html for a complete reference!
+
+set $mod Mod4
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# Thème {{{1
+# font for window titles. ISO 10646 = Unicode
+#font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
+font -*-ohsnapu-medium-r-normal-*-12-*-*-*-*-*-*-*
+
+# Couleurs {{{2
+# class                 border  backgr. text    indicator
+client.focused          #FFAA00 #CF4913 #ffffff #FFEB55
+client.focused_inactive #333333 #5f676a #ffffff #484e50
+client.unfocused        #444444 #222222 #CCC2C2 #292d2e
+client.urgent           #2f343a #900000 #ffffff #900000
+# }}}
+# }}}
+
+# binding {{{1
+# start a terminal
+bindsym $mod+Return exec i3-sensible-terminal
+
+# kill focused window
+bindsym $mod+Shift+K kill
+
+# start dmenu (a program launcher)
+bindsym $mod+d exec ~/.local/bin/dmenu_run
+
+# Lance une recherche sur le web
+bindsym $mod+g exec ~/.local/bin/www-go
+
+# change focus
+bindsym $mod+c focus left
+bindsym $mod+t focus down
+bindsym $mod+s focus up
+bindsym $mod+r focus right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+C move left
+bindsym $mod+Shift+T move down
+bindsym $mod+Shift+S move up
+bindsym $mod+Shift+R move right
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+# split in horizontal orientation
+bindsym $mod+h split h
+
+# split in vertical orientation
+bindsym $mod+v split v
+
+# enter fullscreen mode for the focused container
+bindsym $mod+f fullscreen
+
+# change container layout (stacked, tabbed, default)
+bindsym $mod+p layout toggle split
+bindsym $mod+l layout tabbed
+bindsym $mod+j layout stacking
+
+# toggle tiling / floating
+bindsym $mod+Shift+nobreakspace floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# focus the parent container
+bindsym $mod+a focus parent
+
+# focus the child container
+bindsym $mod+b focus child
+
+# switch to workspace
+bindsym $mod+quotedbl workspace 1
+bindsym $mod+less workspace 2
+bindsym $mod+greater workspace 3
+bindsym $mod+parenleft workspace 4
+bindsym $mod+parenright workspace 5
+bindsym $mod+bracketleft workspace 6
+bindsym $mod+bracketright workspace 7
+bindsym $mod+asciitilde workspace 8
+bindsym $mod+slash workspace 9
+bindsym $mod+asterisk workspace 10
+
+# move focused container to workspace
+bindsym $mod+Shift+1 move workspace 1
+bindsym $mod+Shift+2 move workspace 2
+bindsym $mod+Shift+3 move workspace 3
+bindsym $mod+Shift+4 move workspace 4
+bindsym $mod+Shift+5 move workspace 5
+bindsym $mod+Shift+6 move workspace 6
+bindsym $mod+Shift+7 move workspace 7
+bindsym $mod+Shift+8 move workspace 8
+bindsym $mod+Shift+9 move workspace 9
+bindsym $mod+Shift+0 move workspace 10
+
+# reload the configuration file
+bindsym $mod+Shift+X reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+O restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+P exit
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # They resize the border in the direction you pressed, e.g.
+        # when pressing left, the window is resized so that it has
+        # more space on its left
+
+bindsym c       resize shrink left 10 px or 1 ppt
+bindsym Shift+c resize grow   left 10 px or 1 ppt
+
+bindsym t       resize shrink down 10 px or 1 ppt
+bindsym Shift+t resize grow   down 10 px or 1 ppt
+
+bindsym s       resize shrink up 10 px or 1 ppt
+bindsym Shift+s resize grow   up 10 px or 1 ppt
+
+bindsym r       resize shrink right 10 px or 1 ppt
+bindsym Shift+r resize grow   right 10 px or 1 ppt
+
+        # same bindings, but for the arrow keys
+bindsym Left       resize shrink left 10 px or 1 ppt
+bindsym Shift+Left resize grow   left 10 px or 1 ppt
+
+bindsym Down       resize shrink down 10 px or 1 ppt
+bindsym Shift+Down resize grow   down 10 px or 1 ppt
+
+bindsym Up       resize shrink up 10 px or 1 ppt
+bindsym Shift+Up resize grow   up 10 px or 1 ppt
+
+bindsym Right       resize shrink right 10 px or 1 ppt
+bindsym Shift+Right resize grow   right 10 px or 1 ppt
+
+        # back to normal: Enter or Escape
+bindsym Return mode "default"
+bindsym Escape mode "default"
+}
+
+bindsym $mod+o mode "resize"
+
+# Mark une fenêtre : vim style
+bindsym  $mod+m  exec i3-input -F 'mark %s'               -l 1 -P 'Mark: '
+bindcode $mod+57 exec i3-input -F '[con_mark="%s"] focus' -l 1 -P 'Mark: '
+
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+# Liste les sessions tmux non attachées.
+bindsym $mod+w exec ~/.local/bin/x-tmux-sessions
+# }}}
+
+# i3bar {{{1
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+bar {
+        tray_output DVI-0
+        status_command i3status
+
+    colors {
+        background #111111
+        statusline #FFEECC
+
+        # colorclass       border  backgr. text
+        focused_workspace  #FFAA00 #CF4913 #ffffff
+        active_workspace   #333333 #5f676a #ffffff
+        inactive_workspace #333333 #222222 #888888
+        urgent_workspace   #2f343a #900000 #ffffff
+    }
+}
+# }}}
+
+workspace_auto_back_and_forth yes
+default_orientation auto
+focus_follows_mouse no
+new_window 1pixel
+
+# L'écran externe utilise par défaut l'espace de travail 10
+workspace 10 output VGA-0
+
+# Réglages spécifiques par fenêtre {{{1
+for_window [class="^mplayer"] border 1pixel
+for_window [title="About Mozilla Firefox"] floating enable
+for_window [class="^XFontSel$"] floating enable
+for_window [class="^Kwalletmanager$" window_role="^MainWindow"] floating enable ; move right 300 px ; move down 200 px
+for_window [class="^Wine$"] floating enable
+for_window [class="^dosbox$"] floating enable
+for_window [class="^Kmix$"] floating enable
+for_window [class="^Gimp$"] border 1pixel
+# Rend flottantes les fenêtres de déplacement, copie (Digikam, Konqueror, …)
+for_window [title="^Moving"] floating enable
+for_window [title="^Copying"] floating enable
+for_window [class="^Texmacs" title="User preferences"] floating enable
+for_window [class="Xdot"] floating enable
+
+for_window [instance="^il2fb.exe$"] floating disable
+for_window [instance="^il2.exe$"] floating disable
+for_window [instance="^su27.exe$"] floating disable
+for_window [instance="^su27.exe$" title="Préférences"] floating enable
+for_window [instance="^su27.exe$" title="Ouvrir"] floating enable
+
+#assign [class="^Firefox$" instance="^Download$"] 9
+# }}}
+# vim: fdm=marker
