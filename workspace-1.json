@@ -1,0 +1,212 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            // tabbed split container with 3 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "mail",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^mail$",
+                       // "title": "^\\[0\\:1\\ miley\\]\\ mutt$",
+                          "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "wiki",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^wiki$",
+                       // "title": "^\\[wiki\\:1\\ fanny\\]\\ vim$",
+                          "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+        //},
+        //{
+        //    // tabbed split container with 1 children
+        //    "border": "pixel",
+        //    "floating": "auto_off",
+        //    "layout": "tabbed",
+        //    "percent": 0.5,
+        //    "type": "con",
+        //    "nodes": [
+        //        {
+        //            "border": "pixel",
+        //            "current_border_width": 1,
+        //            "floating": "auto_off",
+        //            "geometry": {
+        //               "height": 529,
+        //               "width": 766,
+        //               "x": 0,
+        //               "y": 0
+        //            },
+        //            "name": "TV",
+        //            "percent": 1,
+        //            "swallows": [
+        //               {
+        //               // "class": "^Kaffeine$",
+        //                  "instance": "^kaffeine$",
+        //               // "title": "^NRJ12\\ \\–\\ Kaffeine$",
+        //               // "transient_for": "^$",
+        //                  "window_role": "^MainWindow\\#1$"
+        //               }
+        //            ],
+        //            "type": "con"
+        //        }
+        //    ]
+        //}
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [
+        {
+            // tabbed split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.25,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "[0 fanny]",
+                    "percent": 1,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^v$",
+                       // "title": "^\\[0\\:1\\ fanny\\]\\ python$",
+                          "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // tabbed split container with 5 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.75,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "[1 fanny]",
+                    "percent": 0.2,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^main$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+
+{
+    // floating_con with 1 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splith",
+    "percent": null,
+    "rect": {
+       "height": 406,
+       "width": 958,
+       "x": 951,
+       "y": 648
+    },
+    "type": "floating_con",
+    "nodes": [
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "user_on",
+            "geometry": {
+               "height": 404,
+               "width": 644,
+               "x": 0,
+               "y": 0
+            },
+            "name": "pad",
+            "percent": 1,
+            "swallows": [
+               {
+                  "class": "^URxvt$",
+                  "instance": "^pad$",
+               // "title": "^\\[pad\\:1\\ fanny\\]\\ zsh$",
+                  "transient_for": "^$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+

@@ -1,0 +1,204 @@
+// vim:ts=4:sw=4:et
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.4,
+    "type": "con",
+    "nodes": [
+        {
+            // splitv split container with 2 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "splitv",
+            "percent": 0.5,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "mail",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^mail$",
+                       // "title": "^\\[0\\:1\\ miley\\]\\ mutt$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "[wiki:2 fanny] zsh",
+                    "percent": 0.5,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^wiki$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            "border": "pixel",
+            "current_border_width": 1,
+            "floating": "auto_off",
+            "geometry": {
+               "height": 529,
+               "width": 766,
+               "x": 0,
+               "y": 0
+            },
+            "name": "Kaffeine",
+            "percent": 0.5,
+            "swallows": [
+               {
+                  "class": "^Kaffeine$",
+                  "instance": "^kaffeine$",
+               // "title": "^Kaffeine$",
+               // "transient_for": "^$",
+               // "window_role": "^MainWindow\\#1$"
+               }
+            ],
+            "type": "con"
+        }
+    ]
+}
+
+{
+    // splitv split container with 2 children
+    "border": "pixel",
+    "floating": "auto_off",
+    "layout": "splitv",
+    "percent": 0.6,
+    "type": "con",
+    "nodes": [
+        {
+            // tabbed split container with 1 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.25,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "[0:1 fanny]",
+                    "percent": null,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^video$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        },
+        {
+            // tabbed split container with 3 children
+            "border": "pixel",
+            "floating": "auto_off",
+            "layout": "tabbed",
+            "percent": 0.75,
+            "type": "con",
+            "nodes": [
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 404,
+                       "width": 644,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "[1 fanny]",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^URxvt$",
+                          "instance": "^shell$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 600,
+                       "width": 800,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "luakit",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^luakit$",
+                       // "instance": "^luakit$",
+                       // "transient_for": "^$"
+                       }
+                    ],
+                    "type": "con"
+                },
+                {
+                    "border": "pixel",
+                    "current_border_width": 1,
+                    "floating": "auto_off",
+                    "geometry": {
+                       "height": 779,
+                       "width": 1150,
+                       "x": 0,
+                       "y": 0
+                    },
+                    "name": "Firefox",
+                    "percent": 0.333333333333333,
+                    "swallows": [
+                       {
+                          "class": "^Firefox$",
+                          "instance": "^Navigator$",
+                       // "transient_for": "^$",
+                       // "window_role": "^browser$"
+                       }
+                    ],
+                    "type": "con"
+                }
+            ]
+        }
+    ]
+}
+

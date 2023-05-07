@@ -12,6 +12,10 @@ floating_modifier $mod
 #font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
 font -*-ohsnapu-medium-r-normal-*-12-*-*-*-*-*-*-*
 
+# bordure des nouvelles fenêtres
+new_window pixel
+#new_window 1pixel
+
 # Couleurs {{{2
 # class                 border  backgr. text    indicator
 client.focused          #ABCD67 #63772D #ffffff #EFEFDA
@@ -172,7 +176,7 @@ bindsym $mod+w exec ~/.local/bin/x-tmux-sessions
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        tray_output DVI-0
+        tray_output HDMI1
         status_command i3status
 
     colors {
@@ -191,10 +195,9 @@ bar {
 workspace_auto_back_and_forth yes
 default_orientation auto
 focus_follows_mouse no
-new_window 1pixel
 
 # L'écran externe utilise par défaut l'espace de travail 10
-workspace 10 output VGA-0
+workspace 10 output VGA1
 
 # Réglages spécifiques par fenêtre {{{1
 for_window [class="^mplayer"] border 1pixel
@@ -210,6 +213,7 @@ for_window [title="^Moving"] floating enable
 for_window [title="^Copying"] floating enable
 for_window [class="^Texmacs" title="User preferences"] floating enable
 for_window [class="Xdot"] floating enable
+for_window [title="^Gajim$"] floating enable
 
 for_window [instance="^il2fb.exe$"] floating disable
 for_window [instance="^il2.exe$"] floating disable
@@ -218,5 +222,10 @@ for_window [instance="^su27.exe$" title="Préférences"] floating enable
 for_window [instance="^su27.exe$" title="Ouvrir"] floating enable
 
 #assign [class="^Firefox$" instance="^Download$"] 9
+# }}}
+
+# Layouts {{{1
+exec --no-startup-id "i3-msg 'workspace 1; append_layout ~/.config/i3/workspace-1.json'"
+exec --no-startup-id "~/.config/i3/session.sh"
 # }}}
 # vim: fdm=marker
