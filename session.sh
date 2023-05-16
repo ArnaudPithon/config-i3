@@ -1,7 +1,7 @@
 #!/usr/bin/env dash
 # vim: ft=sh
 # $Id$
-# Last modified: 2023-05-16 11:09:14+0200
+# Last modified: 2023-05-16 11:57:24+0200
 
 
 if [ -x /bin/alacritty ]
@@ -9,8 +9,8 @@ if [ -x /bin/alacritty ]
     _term() {
       APP=$@
       tmux ls 2> /dev/null | grep "^$APP:" &&\
-        command alacritty --class $APP,alacritty -e tmux attach -t $APP &
-      command alacritty --class $APP,alacritty -e tmux new -s $APP &
+        command alacritty --class $APP,alacritty -T $APP -e tmux attach -t $APP &
+      command alacritty --class $APP,alacritty -T $APP -e tmux new -s $APP &
     }
   elif [ -x /usr/bin/urxvtc ]
   then
@@ -29,7 +29,7 @@ if [ -x /bin/alacritty ]
     }
 fi
 
-alacritty --class,alacritty mail &
+alacritty --class mail,alacritty -T mail &
 
 _term v
 _term main

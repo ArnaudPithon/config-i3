@@ -196,8 +196,15 @@ workspace_auto_back_and_forth yes
 default_orientation auto
 focus_follows_mouse no
 
-# L'écran externe utilise par défaut l'espace de travail 10
-workspace 10 output VGA1
+workspace 1 output DisplayPort-0
+workspace 2 output DisplayPort-1
+workspace 3 output DisplayPort-2
+workspace 4 output DisplayPort-0
+workspace 5 output DisplayPort-1
+workspace 6 output DisplayPort-2
+workspace 7 output DisplayPort-0
+workspace 8 output DisplayPort-1
+workspace 9 output DisplayPort-2
 
 # Réglages spécifiques par fenêtre {{{1
 for_window [class="^mplayer"] border 1pixel
